@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #000000;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 300ms;
+  width: 10rem;
+  height: 15rem;
+  display: grid;
+  place-items: center;
+  border-radius: .4rem;
+  background: linear-gradient(145deg, #1f1f1f, #080808);
+  box-shadow:  1rem 1rem 1rem #00000036;
+}
+
+.card::before {
+  content: ' ';
+  display: block;
+  width: 120%;
+  height: 120%;
+  border-radius: .4rem;
+  background: linear-gradient(90deg, transparent, #98f8ff, #98f8ff, #98f8ff, #98f8ff, transparent);
+  animation: rotationBorder 5000ms infinite linear;
+}
+
+.content {
+    position: absolute;
+    top: 0.4%;
+    left: 0.5%;
+    bottom: 0.4%;
+    right: 0.5%;
+    padding: 1rem;
+    background: linear-gradient(145deg, #1f1f1f, #080808);
+    border-radius: .37rem;
+    color: rgb(115, 211, 198);
+  }
+
+@keyframes rotationBorder {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
